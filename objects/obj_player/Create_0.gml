@@ -1,4 +1,5 @@
 initialize_movement_entity(.5, 1, obj_solid);
+initialize_hurtbox_entity();
 image_speed = 0;
 acceleration_ = .5; 
 max_speed_ = 1.5;
