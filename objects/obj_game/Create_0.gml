@@ -16,3 +16,7 @@ global.player_start_position = inst_game_start_position;
 var _view_width = camera_get_view_width(view_camera[0]);
 var _view_height = camera_get_view_height(view_camera[0]);
 display_set_gui_size(_view_width, _view_height)
+
+paused_ = false; 
+paused_sprite_ = noone;
+paused_sprite_scale_ = display_get_gui_width() / view_wport[0];
