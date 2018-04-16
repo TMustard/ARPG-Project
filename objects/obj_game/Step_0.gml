@@ -2,6 +2,19 @@ if paused_ {
 	var _array_size = array_length_1d(global.inventory);	
 	if obj_input.right_pressed_ {
 		item_index_ = min(item_index_ + 1, _array_size - 1);	
+		audio_play_sound(sound_menu_move, 1, false);
+	}
+		if obj_input.left_pressed_ {
+		item_index_ = max(item_index_ - 1, 0);	
+		audio_play_sound(sound_menu_move, 1, false);
+	}
+		if obj_input.action_one_pressed_ {
+		global.item[0] = global.inventory[item_index_];
+		audio_play_sound(sound_menu_select, 3, false);
+	}
+		if obj_input.action_two_pressed_ {
+		global.item[1] = global.inventory[item_index_];
+		audio_play_sound(sound_menu_select, 3, false);
 	}
 }
 
