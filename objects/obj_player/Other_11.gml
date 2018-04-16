@@ -7,7 +7,7 @@ if animation_hit_frame(1) {
 	var _damage = 1;
 	var _knockback = 8;
 	var _hitbox = create_hitbox(spr_sword_hitbox, x, y, _angle, _life, [obj_enemy, obj_grass], _damage, _knockback);
-	
+	audio_play_sound(sound_swipe, 8, false);
 	//For adjusting hitbox.y according to sprite, will need to be changed if you use a different player sprite.
 	switch direction_facing_ {
 		case dir.up: _hitbox.y -= 4; 
