@@ -28,29 +28,36 @@ enum dir {
 starting_state_ = player.move;
 state_ = starting_state_ ;
 
-// Lookup table for sprite movement 
+// Lookup table for move state
 sprite_[player.move, dir.right] = spr_player_right;
 sprite_[player.move, dir.up] = spr_player_up;
 sprite_[player.move, dir.left] = spr_player_right;
 sprite_[player.move, dir.down] = spr_player_down;
 
-// Lookup table for attacking with sword
+// Lookup table for sword state
 sprite_[player.sword, dir.right] = spr_player_attack_right;
 sprite_[player.sword, dir.up] = spr_player_attack_up;
 sprite_[player.sword, dir.left] = spr_player_attack_right;
 sprite_[player.sword, dir.down] = spr_player_attack_down;
 
-// Lookup table for rolling
+// Lookup table for roll state
 sprite_[player.evade, dir.right] = spr_player_roll_right;
 sprite_[player.evade, dir.up] = spr_player_roll_up;
 sprite_[player.evade, dir.left] = spr_player_roll_right;
 sprite_[player.evade, dir.down] = spr_player_roll_down;
 
-//Lookup table for being hit
+//Lookup table for hit state
 sprite_[player.hit, dir.right] = spr_player_right;
 sprite_[player.hit, dir.up] = spr_player_up;
 sprite_[player.hit, dir.left] = spr_player_right;
 sprite_[player.hit, dir.down] = spr_player_down;
+
+//Lookup table for bomb state
+sprite_[player.bomb, dir.right] = spr_player_right;
+sprite_[player.bomb, dir.up] = spr_player_up;
+sprite_[player.bomb, dir.left] = spr_player_right;
+sprite_[player.bomb, dir.down] = spr_player_down;
+
 
 
 

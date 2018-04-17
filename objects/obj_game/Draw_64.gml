@@ -1,6 +1,6 @@
 var _gui_width = display_get_gui_width();
 var _gui_height = display_get_gui_height();
-var _hud_right_edge = 3 + global.player_max_health * 15;
+
 
 if sprite_exists(paused_sprite_) {
 	draw_sprite_ext(paused_sprite_, 0, 0, 0, paused_sprite_scale_, paused_sprite_scale_, 0, c_white, 1);
@@ -9,6 +9,8 @@ if sprite_exists(paused_sprite_) {
 	draw_set_alpha(1); 
 }
 
+//these are arbitrary values that will need to be changed if the view changes
+var _hud_right_edge = max(3 + global.player_max_health * 15, 2 + global.player_max_stamina * 17);
 draw_sprite_ext(spr_hud, 0, 0, _gui_height, _hud_right_edge, 1, 0, c_white, 1);
 draw_sprite(spr_hud_edge, 0, _hud_right_edge, _gui_height);
 
@@ -16,6 +18,12 @@ for (var _i=0; _i < global.player_max_health; _i++) {
 	var _filled = _i < global.player_health;
 	//these are arbitrary values that will need to be changed if the view changes
 	draw_sprite(spr_heart_ui, _filled, 4 + 15 * _i, _gui_height - 23);
+}
+
+for (var _i=0; _i < global.player_max_stamina; _i++) {
+	var _filled = _i < global.player_stamina;
+	//these are arbitrary values that will need to be changed if the view changes
+	draw_sprite(spr_stamina_ui, _filled, 4 + 17 * _i, _gui_height - 17);
 }
 
 var _gem_string = string(global.player_gems);

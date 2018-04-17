@@ -23,15 +23,8 @@ if _x_input == 0 && _y_input == 0 {
 		roll_direction_ = direction_facing_ * 90;
 }
 
-if _attack_input == true {
-	image_index = 0;
-	state_ = player.sword;
-}
-
-if _roll_input == true {
-	image_index = 0;
-	state_ = player.evade;
-}
+inventory_use_item(obj_input.action_one_pressed_, global.item[0]);
+inventory_use_item(obj_input.action_two_pressed_, global.item[1]);
 
 
 
