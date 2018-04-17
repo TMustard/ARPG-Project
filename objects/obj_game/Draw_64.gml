@@ -17,7 +17,7 @@ draw_sprite(spr_hud_edge, 0, _hud_right_edge, _gui_height);
 for (var _i=0; _i < global.player_max_health; _i++) {
 	var _filled = _i < global.player_health;
 	//these are arbitrary values that will need to be changed if the view changes
-	draw_sprite(spr_heart_ui, _filled, 4 + 15 * _i, _gui_height - 23);
+	draw_sprite(spr_heart_ui, _filled, 4 + 15 * _i, _gui_height - 29);
 }
 
 for (var _i=0; _i < global.player_max_stamina; _i++) {
