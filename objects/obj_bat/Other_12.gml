@@ -7,9 +7,13 @@ if !instance_exists(obj_player) {
 if distance_to_object(obj_player) > range_ {
 	state_ = bat.move;	
 }
-set_sprite_facing();
 
 var _direction = point_direction(x, y, obj_player.x, obj_player.y);
+var _x_speed = lengthdir_x(speed_, _direction)
+if _x_speed != 0 {
+	image_xscale = sign(_x_speed)	
+}
+
 add_movement_maxspeed(_direction, 0.123, 1);
 move_movement_entity(true);
 

@@ -12,9 +12,10 @@ var _y_speed = lengthdir_y(speed_, direction_);
 if speed_ <= 0 exit; // No need to check for collisions
 
 
-//Checks for collision with solid object given current xspeed. If there's no collision detected then x += xspeed
+//Checks for collision with solid object given current xspeed. If there's no collision detected then x += xspeed.
 if place_meeting(x+_x_speed, y, collision_object_) {
-//If imminent collision is detected, moves object one pixel per frame toward solid object until the two objects are touching	
+//If imminent collision is detected, this loop runs, moving the object one pixel at a time until it's touching the solid object.
+//Note that this happens in the space of one frame, so the movement doesn't slow, it's just cut short on the last frame if needed. 
 	while !place_meeting(x+sign(_x_speed), y, collision_object_) {
 //Sign returns -1 if xspeed is negative(moving left or, up if this was yspeed), 1 if positive(moving right, or down if yspeed)
 		x += sign(_x_speed);

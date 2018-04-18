@@ -1,4 +1,6 @@
-global.one_second = game_get_speed(gamespeed_fps)
+global.one_second = game_get_speed(gamespeed_fps);
+//If saving/loading is done differently, you might not be able to use the instance's ID here
+global.destroyed = [];
 instance_create_layer(0, 0, "Instances", obj_input);
 
 var _font_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.abcdefghijklmnopqrstuvwxyz1234567890>,!':-+";
@@ -11,6 +13,7 @@ global.player_max_stamina = 3;
 global.player_stamina = global.player_max_stamina;
 global.player_gems = 0; 
 global.player_start_position = inst_game_start_position;
+
 
 //audio_play_sound(sound_music, 10, true)
 var _view_width = camera_get_view_width(view_camera[0]);
